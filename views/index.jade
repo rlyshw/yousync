@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1.title= title
+  p.subtitle Welcome to #{title}
+  span
+    input(type='text')
+    button.submit(onclick="emit()") Submit
+    button.send(onclick="send()", hidden) Send
+  google-youtube#googleYouTube
+  script(src="/javascripts/index.js")

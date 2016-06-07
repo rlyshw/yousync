@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p Viewing #{title}
+  google-youtube#googleYouTube
+  script.
+    socket.emit('start','#{title}');
+    socket.on('msg',function(data){
+        console.log(data);
+    })
+    
+    var yt = $('#googleYouTube')[0];
+    socket.on('update',function(data){
+        //console.log(data)
+        yt.videoId = data.videoId;
+        //yt.state = data.state;//this doesn't work, use a method
+        if(data.state==1&&yt.state==2)yt.play();
+        if(data.state==2)yt.pause();
+        if(Math.abs(yt.currenttime-data.currenttime)>1)yt.seekTo(data.currenttime);
+        //yt.currenttime = data.currenttime;//also doesn't work, use method
+    })
