@@ -1,0 +1,20 @@
+{
+  "name": "yousync",
+  "description": "",
+  "main": "",
+  "authors": [
+    "rlyshw <rlyshw@rlyshw.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rlyshw/yousync",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-youtube": "GoogleWebComponents/google-youtube#^1.2.1"
+  }
+}
